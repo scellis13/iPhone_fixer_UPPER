@@ -99,12 +99,8 @@
 		0204D4FF262D276600966BFC /* iPhone_Fixer_UPPER */ = {
 			isa = PBXGroup;
 			children = (
-				0204D500262D276600966BFC /* AppDelegate.swift */,
-				0204D502262D276600966BFC /* SceneDelegate.swift */,
-				0204D504262D276600966BFC /* ViewController.swift */,
-				0204D506262D276600966BFC /* Main.storyboard */,
+				0204D533263639E400966BFC /* Resources */,
 				0204D509262D276600966BFC /* Assets.xcassets */,
-				0204D50B262D276600966BFC /* LaunchScreen.storyboard */,
 				0204D50E262D276600966BFC /* Info.plist */,
 			);
 			path = iPhone_Fixer_UPPER;
@@ -126,6 +122,42 @@
 				0204D524262D276600966BFC /* Info.plist */,
 			);
 			path = iPhone_Fixer_UPPERUITests;
+			sourceTree = "<group>";
+		};
+		0204D533263639E400966BFC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0204D53626363A0B00966BFC /* Controller */,
+				0204D53526363A0600966BFC /* View */,
+				0204D534263639F300966BFC /* Model */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0204D534263639F300966BFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0204D500262D276600966BFC /* AppDelegate.swift */,
+				0204D502262D276600966BFC /* SceneDelegate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0204D53526363A0600966BFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0204D506262D276600966BFC /* Main.storyboard */,
+				0204D50B262D276600966BFC /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0204D53626363A0B00966BFC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0204D504262D276600966BFC /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
