@@ -127,6 +127,7 @@
 		0204D533263639E400966BFC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				02CAE67A2636406700C00D35 /* Photos */,
 				0204D53626363A0B00966BFC /* Controller */,
 				0204D53526363A0600966BFC /* View */,
 				0204D534263639F300966BFC /* Model */,
@@ -158,6 +159,13 @@
 				0204D504262D276600966BFC /* ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		02CAE67A2636406700C00D35 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Photos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
