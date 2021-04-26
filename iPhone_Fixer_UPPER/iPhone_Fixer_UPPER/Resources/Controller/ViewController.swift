@@ -1,7 +1,7 @@
-// Last Update: 04/25/2021 06:52PM
+// Last Update: 04/25/2021 08:53PM
 // Updated By: Sean Ellis
-// Actions: Added background gif to storyboard. Currently loops.
-// Next Actions: Need to set the gif to play on background thread for at least 10 seconds while the rest of the app loads. Then set app_ready to true and stop the background_gif from playing.
+// Actions: Added Background Queue that is simulating user data load. Will have to assess how long it takes to load iCloud Drive and user data later, but for now it simulates a 15 second load time. Swaps to a background still view once load is complete.
+// Next Actions: Design initial view that prompts user to add text/file to be converted.
 
 import UIKit
 
