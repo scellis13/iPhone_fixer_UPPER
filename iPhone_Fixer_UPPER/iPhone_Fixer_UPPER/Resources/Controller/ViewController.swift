@@ -1,9 +1,7 @@
-//
-//  ViewController.swift
-//  iPhone_Fixer_UPPER
-//
-//  Created by JPL-ST-SPRING2021 on 4/18/21.
-//
+// Last Update: 04/25/2021 06:52PM
+// Updated By: Sean Ellis
+// Actions: Added background gif to storyboard. Currently loops.
+// Next Actions: Need to set the gif to play on background thread for at least 10 seconds while the rest of the app loads. Then set app_ready to true and stop the background_gif from playing.
 
 import UIKit
 
