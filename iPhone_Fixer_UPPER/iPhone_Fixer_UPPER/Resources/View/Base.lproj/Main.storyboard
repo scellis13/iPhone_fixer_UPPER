@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,43 +13,27 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iPhone_Fixer_UPPER" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Fixer UPPER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pvs-FS-f5P">
-                                <rect key="frame" x="116" y="414" width="162" height="38"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" name="AccentColor"/>
-                                <size key="shadowOffset" width="-1" height="2"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Powered by SE Development and Taylorlukee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5F-a9-Pgg">
-                                <rect key="frame" x="0.0" y="462" width="394" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="v1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9V-L5-gZP">
-                                <rect key="frame" x="278" y="436" width="30" height="18"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_gif_large.gif" translatesAutoresizingMaskIntoConstraints="NO" id="ltL-kd-fGu">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="z5F-a9-Pgg" firstAttribute="top" secondItem="Pvs-FS-f5P" secondAttribute="bottom" constant="10" id="0j7-An-X3a"/>
-                            <constraint firstItem="z5F-a9-Pgg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2tI-a0-gTs"/>
-                            <constraint firstItem="o9V-L5-gZP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="96" id="C2u-0b-RwO"/>
-                            <constraint firstItem="Pvs-FS-f5P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gii-79-Ma6"/>
-                            <constraint firstItem="o9V-L5-gZP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="12" id="Hhn-Jv-blx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z5F-a9-Pgg" secondAttribute="trailing" constant="10" id="b7I-4L-9Ch"/>
-                            <constraint firstItem="Pvs-FS-f5P" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="s2Q-aL-Frv"/>
-                            <constraint firstItem="z5F-a9-Pgg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="wEK-uD-MmU"/>
+                            <constraint firstItem="ltL-kd-fGu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="62t-Si-ffT"/>
+                            <constraint firstAttribute="trailing" secondItem="ltL-kd-fGu" secondAttribute="trailing" id="Dva-q3-QK0"/>
+                            <constraint firstAttribute="bottom" secondItem="ltL-kd-fGu" secondAttribute="bottom" id="IVW-Ii-kGT"/>
+                            <constraint firstItem="ltL-kd-fGu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KcL-Uw-dHK"/>
+                            <constraint firstItem="ltL-kd-fGu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f2N-Vg-f8v"/>
+                            <constraint firstItem="ltL-kd-fGu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wwx-Nn-qWE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gif_loadview" destination="ltL-kd-fGu" id="Teq-Lj-HSV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,9 +41,7 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="background_gif_large.gif" width="1170" height="2532"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

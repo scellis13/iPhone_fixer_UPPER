@@ -15,16 +15,30 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_still.png" translatesAutoresizingMaskIntoConstraints="NO" id="WCT-VO-Blu">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WCT-VO-Blu" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="8BZ-iV-3Iu"/>
+                            <constraint firstItem="WCT-VO-Blu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XzI-EJ-l54"/>
+                            <constraint firstItem="WCT-VO-Blu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="gPm-zR-biN"/>
+                            <constraint firstAttribute="trailing" secondItem="WCT-VO-Blu" secondAttribute="trailing" id="ss6-Uu-Zlt"/>
+                            <constraint firstItem="WCT-VO-Blu" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="w7A-dZ-ih2"/>
+                            <constraint firstAttribute="bottom" secondItem="WCT-VO-Blu" secondAttribute="bottom" id="y9F-lZ-Vjw"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.307692307692307" y="374.64454976303318"/>
         </scene>
     </scenes>
     <resources>
+        <image name="background_still.png" width="1170" height="2532"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
