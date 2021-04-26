@@ -19,7 +19,7 @@
 		02CAE6C626365A6B00C00D35 /* background_animation_medium.gif in Resources */ = {isa = PBXBuildFile; fileRef = 02CAE6C526365A6B00C00D35 /* background_animation_medium.gif */; };
 		02CAE6CB26365A7000C00D35 /* background_animation_small.gif in Resources */ = {isa = PBXBuildFile; fileRef = 02CAE6CA26365A7000C00D35 /* background_animation_small.gif */; };
 		02CAE6D326365AB700C00D35 /* background_still.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CAE6D226365AB700C00D35 /* background_still.png */; };
-		02CAE6E626365E0600C00D35 /* gifLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CAE6E526365E0600C00D35 /* gifLoad.swift */; };
+		02CAE6EE26365E5F00C00D35 /* gifLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CAE6ED26365E5F00C00D35 /* gifLoad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 		02CAE6C526365A6B00C00D35 /* background_animation_medium.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = background_animation_medium.gif; sourceTree = "<group>"; };
 		02CAE6CA26365A7000C00D35 /* background_animation_small.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = background_animation_small.gif; path = ../../../../../../../Desktop/background_animation_small.gif; sourceTree = "<group>"; };
 		02CAE6D226365AB700C00D35 /* background_still.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_still.png; sourceTree = "<group>"; };
-		02CAE6E526365E0600C00D35 /* gifLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gifLoad.swift; sourceTree = "<group>"; };
+		02CAE6ED26365E5F00C00D35 /* gifLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gifLoad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,9 +148,9 @@
 		0204D534263639F300966BFC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				02CAE6ED26365E5F00C00D35 /* gifLoad.swift */,
 				0204D500262D276600966BFC /* AppDelegate.swift */,
 				0204D502262D276600966BFC /* SceneDelegate.swift */,
-				02CAE6E526365E0600C00D35 /* gifLoad.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -319,7 +319,7 @@
 			files = (
 				0204D505262D276600966BFC /* ViewController.swift in Sources */,
 				0204D501262D276600966BFC /* AppDelegate.swift in Sources */,
-				02CAE6E626365E0600C00D35 /* gifLoad.swift in Sources */,
+				02CAE6EE26365E5F00C00D35 /* gifLoad.swift in Sources */,
 				0204D503262D276600966BFC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
