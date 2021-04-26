@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_still.png" translatesAutoresizingMaskIntoConstraints="NO" id="CRi-lO-KEF">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_gif_large.gif" translatesAutoresizingMaskIntoConstraints="NO" id="ltL-kd-fGu">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
@@ -29,28 +32,34 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="CRi-lO-KEF" secondAttribute="bottom" id="5uW-fA-VnQ"/>
                             <constraint firstItem="ltL-kd-fGu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="62t-Si-ffT"/>
+                            <constraint firstItem="CRi-lO-KEF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="BW1-fb-KOM"/>
                             <constraint firstAttribute="trailing" secondItem="ltL-kd-fGu" secondAttribute="trailing" id="Dva-q3-QK0"/>
                             <constraint firstAttribute="bottom" secondItem="ltL-kd-fGu" secondAttribute="bottom" id="IVW-Ii-kGT"/>
                             <constraint firstItem="ltL-kd-fGu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KcL-Uw-dHK"/>
                             <constraint firstItem="HuW-HZ-Pls" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NMg-bM-uGm"/>
                             <constraint firstItem="HuW-HZ-Pls" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="70" id="PTG-3t-io1"/>
                             <constraint firstItem="ltL-kd-fGu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f2N-Vg-f8v"/>
+                            <constraint firstItem="CRi-lO-KEF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="go7-a5-Lod"/>
+                            <constraint firstAttribute="trailing" secondItem="CRi-lO-KEF" secondAttribute="trailing" id="iKm-C6-BS7"/>
                             <constraint firstItem="ltL-kd-fGu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wwx-Nn-qWE"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="background_image" destination="CRi-lO-KEF" id="r5P-Sv-2Ga"/>
                         <outlet property="gif_loadview" destination="ltL-kd-fGu" id="Teq-Lj-HSV"/>
                         <outlet property="loadLabel" destination="HuW-HZ-Pls" id="mUB-8r-bKO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14" y="93"/>
+            <point key="canvasLocation" x="13.846153846153845" y="92.417061611374407"/>
         </scene>
     </scenes>
     <resources>
         <image name="background_gif_large.gif" width="1170" height="2532"/>
+        <image name="background_still.png" width="1170" height="2532"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

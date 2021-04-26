@@ -9,14 +9,16 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var gif_loadview: UIImageView!
     @IBOutlet weak var loadLabel: UILabel!
+    @IBOutlet weak var background_image: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         loadLabel.isHidden = true
+        background_image.isHidden = true
         loadData(callback: loadComplete)
-        loadLabel.isHidden = false
         gif_loadview.loadGif(name: "background_gif_large")
+        loadLabel.isHidden = false
         
     }
     
@@ -27,14 +29,19 @@ class ViewController: UIViewController {
         DispatchQueue.global().async {
             sleep(15) //Imitating fetching user data
             DispatchQueue.main.async {
+                self.gif_loadview.isHidden = true
+                self.background_image.isHidden = false
+                self.loadLabel.text = "Load complete."
+            }
+            sleep(3)
+            DispatchQueue.main.async {
                 callback()
             }
         }
     }
     
     func loadComplete() -> Void {
-        gif_loadview.stopAnimating()
-        gif_loadview.isHidden = true
+        //Change views here.
         loadLabel.isHidden = true
     }
 
