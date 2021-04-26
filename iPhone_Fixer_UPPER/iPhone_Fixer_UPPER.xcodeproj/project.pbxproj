@@ -19,7 +19,7 @@
 		02CAE687263645AE00C00D35 /* background_animation_medium.gif in Resources */ = {isa = PBXBuildFile; fileRef = 02CAE686263645AE00C00D35 /* background_animation_medium.gif */; };
 		02CAE68C263645B200C00D35 /* background_animation_small.gif in Resources */ = {isa = PBXBuildFile; fileRef = 02CAE68B263645B200C00D35 /* background_animation_small.gif */; };
 		02CAE691263645B600C00D35 /* background_still.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CAE690263645B600C00D35 /* background_still.png */; };
-		02CAE69E2636531000C00D35 /* gifLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CAE69D2636531000C00D35 /* gifLoad.swift */; };
+		02CAE69E2636531000C00D35 /* gifLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CAE69D2636531000C00D35 /* gifLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,7 @@
 		02CAE686263645AE00C00D35 /* background_animation_medium.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = background_animation_medium.gif; path = ../../../../../../../Desktop/background_animation_medium.gif; sourceTree = "<group>"; };
 		02CAE68B263645B200C00D35 /* background_animation_small.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = background_animation_small.gif; path = ../../../../../../../Desktop/background_animation_small.gif; sourceTree = "<group>"; };
 		02CAE690263645B600C00D35 /* background_still.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_still.png; path = ../../../../../../../Desktop/background_still.png; sourceTree = "<group>"; };
-		02CAE69D2636531000C00D35 /* gifLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = gifLoad.swift; path = ../../../../../../../Desktop/gifLoad.swift; sourceTree = "<group>"; };
+		02CAE69D2636531000C00D35 /* gifLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = gifLoader.swift; path = ../../../../../../../Desktop/gifLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,9 +148,9 @@
 		0204D534263639F300966BFC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				02CAE69D2636531000C00D35 /* gifLoad.swift */,
 				0204D500262D276600966BFC /* AppDelegate.swift */,
 				0204D502262D276600966BFC /* SceneDelegate.swift */,
+				02CAE69D2636531000C00D35 /* gifLoader.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -319,7 +319,7 @@
 			files = (
 				0204D505262D276600966BFC /* ViewController.swift in Sources */,
 				0204D501262D276600966BFC /* AppDelegate.swift in Sources */,
-				02CAE69E2636531000C00D35 /* gifLoad.swift in Sources */,
+				02CAE69E2636531000C00D35 /* gifLoader.swift in Sources */,
 				0204D503262D276600966BFC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
