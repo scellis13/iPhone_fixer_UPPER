@@ -19,6 +19,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_gif_large.gif" translatesAutoresizingMaskIntoConstraints="NO" id="ltL-kd-fGu">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L o a d i n g . . ." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HuW-HZ-Pls">
+                                <rect key="frame" x="130.66666666666669" y="480" width="128.66666666666669" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -27,12 +33,15 @@
                             <constraint firstAttribute="trailing" secondItem="ltL-kd-fGu" secondAttribute="trailing" id="Dva-q3-QK0"/>
                             <constraint firstAttribute="bottom" secondItem="ltL-kd-fGu" secondAttribute="bottom" id="IVW-Ii-kGT"/>
                             <constraint firstItem="ltL-kd-fGu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KcL-Uw-dHK"/>
+                            <constraint firstItem="HuW-HZ-Pls" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NMg-bM-uGm"/>
+                            <constraint firstItem="HuW-HZ-Pls" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="70" id="PTG-3t-io1"/>
                             <constraint firstItem="ltL-kd-fGu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f2N-Vg-f8v"/>
                             <constraint firstItem="ltL-kd-fGu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wwx-Nn-qWE"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="gif_loadview" destination="ltL-kd-fGu" id="Teq-Lj-HSV"/>
+                        <outlet property="loadLabel" destination="HuW-HZ-Pls" id="mUB-8r-bKO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
