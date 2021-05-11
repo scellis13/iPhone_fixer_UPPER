@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		0204D501262D276600966BFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204D500262D276600966BFC /* AppDelegate.swift */; };
 		0204D503262D276600966BFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204D502262D276600966BFC /* SceneDelegate.swift */; };
-		0204D505262D276600966BFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204D504262D276600966BFC /* ViewController.swift */; };
+		0204D505262D276600966BFC /* LoadAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204D504262D276600966BFC /* LoadAppViewController.swift */; };
 		0204D508262D276600966BFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0204D506262D276600966BFC /* Main.storyboard */; };
 		0204D50A262D276600966BFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0204D509262D276600966BFC /* Assets.xcassets */; };
 		0204D50D262D276600966BFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0204D50B262D276600966BFC /* LaunchScreen.storyboard */; };
 		0204D518262D276600966BFC /* iPhone_Fixer_UPPERTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204D517262D276600966BFC /* iPhone_Fixer_UPPERTests.swift */; };
 		0204D523262D276600966BFC /* iPhone_Fixer_UPPERUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204D522262D276600966BFC /* iPhone_Fixer_UPPERUITests.swift */; };
+		0272EE1A264B0C3B003A1076 /* HomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272EE19264B0C3B003A1076 /* HomeScreenController.swift */; };
 		02CAE6C126365A6400C00D35 /* background_gif_large.gif in Resources */ = {isa = PBXBuildFile; fileRef = 02CAE6C026365A6400C00D35 /* background_gif_large.gif */; };
 		02CAE6C626365A6B00C00D35 /* background_animation_medium.gif in Resources */ = {isa = PBXBuildFile; fileRef = 02CAE6C526365A6B00C00D35 /* background_animation_medium.gif */; };
 		02CAE6CB26365A7000C00D35 /* background_animation_small.gif in Resources */ = {isa = PBXBuildFile; fileRef = 02CAE6CA26365A7000C00D35 /* background_animation_small.gif */; };
@@ -43,7 +44,7 @@
 		0204D4FD262D276600966BFC /* iPhone_Fixer_UPPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPhone_Fixer_UPPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0204D500262D276600966BFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0204D502262D276600966BFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0204D504262D276600966BFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0204D504262D276600966BFC /* LoadAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAppViewController.swift; sourceTree = "<group>"; };
 		0204D507262D276600966BFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0204D509262D276600966BFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0204D50C262D276600966BFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +55,7 @@
 		0204D51E262D276600966BFC /* iPhone_Fixer_UPPERUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPhone_Fixer_UPPERUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0204D522262D276600966BFC /* iPhone_Fixer_UPPERUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhone_Fixer_UPPERUITests.swift; sourceTree = "<group>"; };
 		0204D524262D276600966BFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0272EE19264B0C3B003A1076 /* HomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenController.swift; sourceTree = "<group>"; };
 		02CAE6C026365A6400C00D35 /* background_gif_large.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = background_gif_large.gif; sourceTree = "<group>"; };
 		02CAE6C526365A6B00C00D35 /* background_animation_medium.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = background_animation_medium.gif; sourceTree = "<group>"; };
 		02CAE6CA26365A7000C00D35 /* background_animation_small.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = background_animation_small.gif; path = ../../../../../../../Desktop/background_animation_small.gif; sourceTree = "<group>"; };
@@ -167,7 +169,8 @@
 		0204D53626363A0B00966BFC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0204D504262D276600966BFC /* ViewController.swift */,
+				0204D504262D276600966BFC /* LoadAppViewController.swift */,
+				0272EE19264B0C3B003A1076 /* HomeScreenController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -317,7 +320,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0204D505262D276600966BFC /* ViewController.swift in Sources */,
+				0204D505262D276600966BFC /* LoadAppViewController.swift in Sources */,
+				0272EE1A264B0C3B003A1076 /* HomeScreenController.swift in Sources */,
 				0204D501262D276600966BFC /* AppDelegate.swift in Sources */,
 				02CAE6EE26365E5F00C00D35 /* gifLoad.swift in Sources */,
 				0204D503262D276600966BFC /* SceneDelegate.swift in Sources */,

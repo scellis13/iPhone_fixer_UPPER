@@ -5,8 +5,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoadAppViewController: UIViewController {
 
+    @IBOutlet weak var loadHomeViewButton: UIButton!
     @IBOutlet weak var gif_loadview: UIImageView!
     @IBOutlet weak var loadLabel: UILabel!
     @IBOutlet weak var background_image: UIImageView!
@@ -16,18 +17,20 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         loadLabel.isHidden = true
         background_image.isHidden = true
+        loadHomeViewButton.layer.cornerRadius = 10.0
         loadData(callback: loadComplete)
         gif_loadview.loadGif(name: "background_gif_large")
         loadLabel.isHidden = false
         
     }
+
     
     func loadData(callback: @escaping () -> Void ) {
         //Load all the necessary user data/iCloud profile
         //Use background thread to load data.
         //Once finished, pass finished = true
         DispatchQueue.global().async {
-            sleep(15) //Imitating fetching user data
+            sleep(3) //Imitating fetching user data
             DispatchQueue.main.async {
                 self.gif_loadview.isHidden = true
                 self.background_image.isHidden = false
@@ -43,7 +46,9 @@ class ViewController: UIViewController {
     func loadComplete() -> Void {
         //Change views here.
         loadLabel.isHidden = true
-    }
+        //Swap Views to HomeScreenView
+        loadHomeViewButton.isHidden = false
+        }
 
     
 
