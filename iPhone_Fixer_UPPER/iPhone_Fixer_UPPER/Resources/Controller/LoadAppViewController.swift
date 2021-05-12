@@ -18,6 +18,9 @@ class LoadAppViewController: UIViewController {
         loadLabel.isHidden = true
         background_image.isHidden = true
         loadHomeViewButton.layer.cornerRadius = 10.0
+        loadHomeViewButton.layer.borderColor = UIColor.gray.cgColor
+        loadHomeViewButton.layer.borderWidth = 1.0
+        loadHomeViewButton.layer.cornerRadius = 5.0
         loadData(callback: loadComplete)
         gif_loadview.loadGif(name: "background_gif_large")
         loadLabel.isHidden = false
@@ -30,7 +33,7 @@ class LoadAppViewController: UIViewController {
         //Use background thread to load data.
         //Once finished, pass finished = true
         DispatchQueue.global().async {
-            sleep(3) //Imitating fetching user data
+            sleep(12) //Imitating fetching user data
             DispatchQueue.main.async {
                 self.gif_loadview.isHidden = true
                 self.background_image.isHidden = false
@@ -48,9 +51,8 @@ class LoadAppViewController: UIViewController {
         loadLabel.isHidden = true
         //Swap Views to HomeScreenView
         loadHomeViewButton.isHidden = false
-        }
-
+    }
     
-
+    
 }
 
