@@ -33,13 +33,13 @@ class LoadAppViewController: UIViewController {
         //Use background thread to load data.
         //Once finished, pass finished = true
         DispatchQueue.global().async {
-            sleep(12) //Imitating fetching user data
+            sleep(1) //Imitating fetching user data
             DispatchQueue.main.async {
                 self.gif_loadview.isHidden = true
                 self.background_image.isHidden = false
                 self.loadLabel.text = "Load complete."
             }
-            sleep(3)
+            sleep(1)
             DispatchQueue.main.async {
                 callback()
             }

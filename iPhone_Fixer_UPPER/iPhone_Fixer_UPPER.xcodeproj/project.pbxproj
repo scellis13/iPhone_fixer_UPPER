@@ -55,6 +55,7 @@
 		0204D522262D276600966BFC /* iPhone_Fixer_UPPERUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhone_Fixer_UPPERUITests.swift; sourceTree = "<group>"; };
 		0204D524262D276600966BFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0272EE19264B0C3B003A1076 /* HomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenController.swift; sourceTree = "<group>"; };
+		02B6C21B264BA77B00F6C7FF /* iPhone_Fixer_UPPER.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iPhone_Fixer_UPPER.entitlements; sourceTree = "<group>"; };
 		02CAE6C026365A6400C00D35 /* background_gif_large.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = background_gif_large.gif; sourceTree = "<group>"; };
 		02CAE6C526365A6B00C00D35 /* background_animation_medium.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = background_animation_medium.gif; sourceTree = "<group>"; };
 		02CAE6D226365AB700C00D35 /* background_still.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_still.png; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 		0204D4FF262D276600966BFC /* iPhone_Fixer_UPPER */ = {
 			isa = PBXGroup;
 			children = (
+				02B6C21B264BA77B00F6C7FF /* iPhone_Fixer_UPPER.entitlements */,
 				0204D533263639E400966BFC /* Resources */,
 				0204D509262D276600966BFC /* Assets.xcassets */,
 				0204D50E262D276600966BFC /* Info.plist */,
@@ -496,7 +498,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iPhone_Fixer_UPPER/iPhone_Fixer_UPPER.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3YF9V99C69;
 				INFOPLIST_FILE = iPhone_Fixer_UPPER/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -514,6 +518,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iPhone_Fixer_UPPER/iPhone_Fixer_UPPER.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = iPhone_Fixer_UPPER/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

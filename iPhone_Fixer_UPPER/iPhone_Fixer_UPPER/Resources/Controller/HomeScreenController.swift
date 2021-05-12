@@ -1,4 +1,5 @@
 import UIKit
+import MobileCoreServices
 
 class HomeScreenController: UIViewController {
     //Main View Elements
@@ -7,6 +8,7 @@ class HomeScreenController: UIViewController {
     @IBOutlet weak var fileSelector_Button: UIButton!
     @IBOutlet weak var startScan_Button: UIButton!
     @IBOutlet weak var filename_Label: UILabel!
+    @IBOutlet weak var preview_Button: UIButton!
     
     //Helper Elements
     @IBOutlet weak var helpButton: UIButton!
@@ -19,6 +21,8 @@ class HomeScreenController: UIViewController {
     
     var previous_header_text = ""
     var filename = ""
+    var fileContent = ""
+    var selectedFilePath: URL!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +74,7 @@ class HomeScreenController: UIViewController {
             "Do you think you're living an ordinary life? You are so mistaken it's difficult to even explain. The mere fact that you exist makes you extraordinary. The odds of you existing are less than winning the lottery, but here you are. Are you going to let this extraordinary opportunity pass?\n\n" +
             "It was that terrifying feeling you have as you tightly hold the covers over you with the knowledge that there is something hiding under your bed. You want to look, but you don't at the same time. You're frozen with fear and unable to act. That's where she found herself and she didn't know what to do next" +
             "Do you think you're living an ordinary life? You are so mistaken it's difficult to even explain. The mere fact that you exist makes you extraordinary. The odds of you existing are less than winning the lottery, but here you are. Are you going to let this extraordinary opportunity pass?\n\n" +
-            "It was that terrifying feeling you have as you tightly hold the covers over you with the knowledge that there is something hiding under your bed. You want to look, but you don't at the same time. You're frozen with fear and unable to act. That's where she found herself and she didn't know what to do next"
+            "It was that terrifying feeling you have as you tightly hold the covers over you with the knowledge that there is something hiding under your bed. You want to look, but you don't at the same time. You're frozen with fear and unable to act. That's where she found herself and she didn't know what to do next."
     }
     
    
@@ -114,27 +118,73 @@ class HomeScreenController: UIViewController {
         
     }
     
-    @IBAction func writeFiles(_ sender: Any) {
-        let file = "\(UUID().uuidString).txt"
-        let contents = "Some text..."
-        
-        let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let fileURL = dir.appendingPathComponent(file)
-        
-        do{
-            try contents.write(to: fileURL, atomically: false, encoding: .utf8)
-        } catch {
-            print("Error: \(error)")
-        }
-    }
+    
     
     @IBAction func importFiles(_ sender: Any) {
-        header_Label.text = "Imported file successful.\nScan ready."
-        filename = "Name of file."
-        filename_Label.text = filename
+
+        let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypePlainText as String], in: .import)
+        documentPicker.delegate = self
+        documentPicker.allowsMultipleSelection = false
+        present(documentPicker, animated: true, completion: nil)
+        
+        
+    }
+    
+    
+    
+    @IBAction func writeFiles(_ sender: Any) {
+        print("Writing files.")
+        do {
+            let newText = fileContent + "\n\nthe Fixer Upper."
+            
+            let newFileURL = selectedFilePath.deletingLastPathComponent().appendingPathComponent(selectedFilePath.deletingPathExtension().lastPathComponent + "_FIXED").appendingPathExtension("txt")
+            
+            print("\n\nContent read from: \(selectedFilePath!)")
+            try newText.write(to: newFileURL, atomically: false, encoding: .utf8)
+            print("\n\nNew Content Written to: \(newFileURL)")
+        } catch {
+            header_Label.text = "Error: Cannot write new file."
+        }
     }
     
     @IBAction func startScan(_ sender: Any){
         header_Label.text = "BegiNNING SCAN..."
+        
+        
+        //Process fileContents
+        
+        
+        
+        header_Label.text = "Scan complete."
+        preview_Button.isHidden = false
+    }
+    
+    @IBAction func preview_Action(_ sender: Any) {
+        
+    }
+    
+    
+    
+    
+}
+
+extension HomeScreenController: UIDocumentPickerDelegate {
+    func documentPicker( _ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let selectedFileURL = urls.first else {
+            return
+        }
+        //READ TXT FILE
+        do {
+            selectedFilePath = selectedFileURL
+            
+            fileContent = try String(contentsOf: selectedFileURL, encoding: .utf8)
+            //print(fileContent)
+            header_Label.text = "Imported file successful.\nScan ready."
+            filename_Label.text = selectedFilePath.deletingLastPathComponent().lastPathComponent + "/" + selectedFilePath.lastPathComponent
+            startScan_Button.isHidden = false
+        } catch {
+            header_Label.text = "Error: Import failed."
+        }
+        
     }
 }
