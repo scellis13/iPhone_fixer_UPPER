@@ -18,7 +18,6 @@
 		0272EE1A264B0C3B003A1076 /* HomeScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272EE19264B0C3B003A1076 /* HomeScreenController.swift */; };
 		02CAE6C126365A6400C00D35 /* background_gif_large.gif in Resources */ = {isa = PBXBuildFile; fileRef = 02CAE6C026365A6400C00D35 /* background_gif_large.gif */; };
 		02CAE6C626365A6B00C00D35 /* background_animation_medium.gif in Resources */ = {isa = PBXBuildFile; fileRef = 02CAE6C526365A6B00C00D35 /* background_animation_medium.gif */; };
-		02CAE6CB26365A7000C00D35 /* background_animation_small.gif in Resources */ = {isa = PBXBuildFile; fileRef = 02CAE6CA26365A7000C00D35 /* background_animation_small.gif */; };
 		02CAE6D326365AB700C00D35 /* background_still.png in Resources */ = {isa = PBXBuildFile; fileRef = 02CAE6D226365AB700C00D35 /* background_still.png */; };
 		02CAE6EE26365E5F00C00D35 /* gifLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CAE6ED26365E5F00C00D35 /* gifLoad.swift */; };
 /* End PBXBuildFile section */
@@ -58,7 +57,6 @@
 		0272EE19264B0C3B003A1076 /* HomeScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenController.swift; sourceTree = "<group>"; };
 		02CAE6C026365A6400C00D35 /* background_gif_large.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = background_gif_large.gif; sourceTree = "<group>"; };
 		02CAE6C526365A6B00C00D35 /* background_animation_medium.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = background_animation_medium.gif; sourceTree = "<group>"; };
-		02CAE6CA26365A7000C00D35 /* background_animation_small.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = background_animation_small.gif; path = ../../../../../../../Desktop/background_animation_small.gif; sourceTree = "<group>"; };
 		02CAE6D226365AB700C00D35 /* background_still.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_still.png; sourceTree = "<group>"; };
 		02CAE6ED26365E5F00C00D35 /* gifLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gifLoad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				02CAE6D226365AB700C00D35 /* background_still.png */,
-				02CAE6CA26365A7000C00D35 /* background_animation_small.gif */,
 				02CAE6C526365A6B00C00D35 /* background_animation_medium.gif */,
 				02CAE6C026365A6400C00D35 /* background_gif_large.gif */,
 			);
@@ -295,7 +292,6 @@
 				0204D50A262D276600966BFC /* Assets.xcassets in Resources */,
 				02CAE6D326365AB700C00D35 /* background_still.png in Resources */,
 				0204D508262D276600966BFC /* Main.storyboard in Resources */,
-				02CAE6CB26365A7000C00D35 /* background_animation_small.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
