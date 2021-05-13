@@ -1,10 +1,12 @@
 {
   "images" : [
     {
+      "filename" : "background_still-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "background_still-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

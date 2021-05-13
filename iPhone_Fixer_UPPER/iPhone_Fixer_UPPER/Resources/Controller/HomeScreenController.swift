@@ -1,8 +1,11 @@
 import UIKit
 import MobileCoreServices
+import Foundation
 
 class HomeScreenController: UIViewController {
+    
     //Main View Elements
+    @IBOutlet weak var background_home: UIImageView!
     @IBOutlet weak var home_screen_image: UIImageView!
     @IBOutlet weak var header_Label: UILabel!
     @IBOutlet weak var fileSelector_Button: UIButton!
@@ -10,6 +13,9 @@ class HomeScreenController: UIViewController {
     @IBOutlet weak var filename_Label: UILabel!
     @IBOutlet weak var preview_Button: UIButton!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var completed_Label: UITextView!
+    @IBOutlet weak var completed_Image: UIImageView!
+    @IBOutlet weak var reset_Button: UIButton!
     
     //Preview Elements
     @IBOutlet var previewScanView: UIView!
@@ -193,7 +199,12 @@ class HomeScreenController: UIViewController {
     @IBAction func saveFile(_ sender: Any) {
         print("Writing files.")
         do {
-            newFileURL = selectedFilePath.deletingLastPathComponent().appendingPathComponent(selectedFilePath.deletingPathExtension().lastPathComponent + "_FIXED").appendingPathExtension("txt")
+            let dateFormatter : DateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let date = Date()
+            let dateString = dateFormatter.string(from:date)
+            
+            newFileURL = selectedFilePath.deletingLastPathComponent().appendingPathComponent(selectedFilePath.deletingPathExtension().lastPathComponent + " Fixed " + dateString).appendingPathExtension("txt")
             
             print("\n\nContent read from: \(selectedFilePath.absoluteURL)")
             try newText.write(to: newFileURL, atomically: false, encoding: .utf8)
@@ -201,19 +212,40 @@ class HomeScreenController: UIViewController {
             
             header_Label.text = "Save complete."
             
-            //completed_Label.text = "Thank you for choosing the Fixer UPPER to help you with your formatting needs. We hope you enjoyed our Application. Your new file '\(newFileURL.lastPathComponent)' has been saved to the original folder location chosen."
-            
             saveButton.isHidden = true
             preview_Button.isHidden = true
+            filename_Label.isHidden = true
+            fileSelector_Button.isHidden = true
+            background_home.isHidden = true
+            completed_Label.isHidden = false
+            completed_Image.isHidden = false
+            helpButton.isHidden = true
+            header_Label.isHidden = true
+            reset_Button.isHidden = false
+            completed_Label.text = "Thank you for choosing the Fixer UPPER.\nWe hope you enjoyed our Application!\n\nYour new file '\(newFileURL.lastPathComponent)' has been saved to the original folder location chosen."
         } catch {
             header_Label.text = "Error: Cannot write new file."
         }
     }
     
-    func resetVariables() {
+    
+    @IBAction func resetAction(_ sender: Any) {
+        reset_Button.isHidden = true
+        completed_Label.isHidden = true
+        completed_Image.isHidden = true
+        previous_header_text = ""
+        filename = ""
+        fileContent = ""
+        newText = ""
+        header_Label.text = ""
+        fileSelector_Button.isHidden = false
+        background_home.isHidden = false
+        helpButton.isHidden = false
+        header_Label.isHidden = false
     }
+    
+    
 }
-
 extension HomeScreenController: UIDocumentPickerDelegate {
     func documentPicker( _ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard let selectedFileURL = urls.first else {
