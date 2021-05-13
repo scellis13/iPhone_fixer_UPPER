@@ -57,17 +57,11 @@ class HomeScreenController: UIViewController {
         fileSelector_Button.layer.shadowOpacity = 0.75
         fileSelector_Button.layer.shadowOffset = .zero
         fileSelector_Button.layer.shadowRadius = 5.0
-        fileSelector_Button.layer.borderColor = UIColor.gray.cgColor
-        fileSelector_Button.layer.borderWidth = 1.0
-        fileSelector_Button.layer.cornerRadius = 15.0
         
         startScan_Button.layer.shadowColor = UIColor.gray.cgColor
         startScan_Button.layer.shadowOpacity = 0.75
         startScan_Button.layer.shadowOffset = .zero
         startScan_Button.layer.shadowRadius = 5.0
-        startScan_Button.layer.borderColor = UIColor.gray.cgColor
-        startScan_Button.layer.borderWidth = 1.0
-        startScan_Button.layer.cornerRadius = 15.0
     }
     
     func setStyleForHelperElements(){
@@ -105,10 +99,11 @@ class HomeScreenController: UIViewController {
     }
     
     func setHelpContent(){
-        helpContent_Label.text = "This is the guide text to get your started.\n\nStart by clicking Import File when you are ready to fix a document. You will be prompted to choose a document from your iCloud. You will be able to make changes to any local files accesed from your iCloud folder name 'Documents'. The app can only choose from local documents in this folder, it is essential that you have stored it in the correct place. \n\n" +
-        "Once your Document folder is selected, click on the file that needs fixing. Once the file is imported there will be a message at the top of your screen saying 'Imported file successful. Scan Ready.' Your next step is to clcik Scan and Fix located directly under the Import File button.\n\n" +
+
+        helpContent_Label.text = "This is the guide text to get your started.\n\nStart by clicking Import File when you are ready to fix a document. You will be prompted to choose a document from your iCloud. You will be able to make changes to any local files accesed from your iOS Device. It is essential that you have stored it in the correct place. \n\n" +
+        "Once your Document folder is selected, click on the file that needs fixing. Once the file is imported there will be a message at the top of your screen saying 'Imported file successful. Scan Ready.' Your next step is to click Scan and Fix located directly under the Import File button. The app will convert all uppercase letters to lowercase, except the first letter after a period.\n\n" +
         "From here you can click on the Preview button to see your old document compared to the new fixed document. This is optional, it serves as a check to make sure you are happy with the changes. Once you are ready to continue, you can click the exit button located at the top right of the screen." +
-            "Your last step is to save. You can do this by using the Save button located to the right of the Preview button. Once you have saved your new file, it will save to the location you originally pulled your document from. It will be renamed with the original files name that also includes, _FIXED, follwed by a date and time stamp." 
+            "Your last step is to save. You can do this by using the Save button located to the right of the Preview button. Once you have saved your new file, it will save to the location you originally pulled your document from. It will be renamed with the original files name that also includes, _FIXED, follwed by a date and time stamp."
     }
     
    
@@ -194,8 +189,7 @@ class HomeScreenController: UIViewController {
         }
         
         
-        header_Label.text = "Scan complete.\nPreview, Save or Change File."
-        
+        header_Label.text = "Scan complete. Choose Preview, Save or Import to continue."
         preview_Button.isHidden = false
         saveButton.isHidden = false
         startScan_Button.isHidden = true
@@ -207,7 +201,7 @@ class HomeScreenController: UIViewController {
         animateIn(desiredView: blurView)
         animateIn(desiredView: previewScanView)
         previous_header_text = header_Label.text!
-        previewHeader_New.text = selectedFilePath.deletingLastPathComponent().appendingPathComponent(selectedFilePath.deletingPathExtension().lastPathComponent + " Fixed 'Timestamp'").appendingPathExtension("txt").lastPathComponent
+        previewHeader_New.text = selectedFilePath.deletingLastPathComponent().appendingPathComponent(selectedFilePath.deletingPathExtension().lastPathComponent + "_FIXED").appendingPathExtension("txt").lastPathComponent
         previewHeader_Old.text = selectedFilePath.lastPathComponent
         header_Label.text = "Previewing changes made."
     }
@@ -259,8 +253,7 @@ class HomeScreenController: UIViewController {
         filename = ""
         fileContent = ""
         newText = ""
-        fileSelector_Button.setTitle("Select File", for: .normal)
-        header_Label.text = "Select a File to Begin."
+        header_Label.text = ""
         fileSelector_Button.isHidden = false
         background_home.isHidden = false
         helpButton.isHidden = false
@@ -300,7 +293,6 @@ extension HomeScreenController: UIDocumentPickerDelegate {
             
             
             startScan_Button.isHidden = false
-            fileSelector_Button.setTitle("Change File", for: .normal)
         } catch {
             header_Label.text = "Error: Import failed."
         }
