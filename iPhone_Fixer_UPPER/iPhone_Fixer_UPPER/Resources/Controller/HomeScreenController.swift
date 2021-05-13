@@ -34,6 +34,7 @@ class HomeScreenController: UIViewController {
     @IBOutlet weak var helpContent_Label: UITextView!
     @IBOutlet weak var helpHeader_Label: UILabel!
     @IBOutlet weak var helpFileFormat_Label: UILabel!
+    @IBOutlet weak var comingSoon: UILabel!
     
     var previous_header_text = ""
     var filename = ""
@@ -41,6 +42,7 @@ class HomeScreenController: UIViewController {
     var newText = ""
     var selectedFilePath: URL!
     var newFileURL: URL!
+    var pathExtension = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,10 +78,6 @@ class HomeScreenController: UIViewController {
         showHelp_Outlet.layer.shadowOffset = .zero
         showHelp_Outlet.layer.shadowRadius = 10.0
         
-        helpHeader_Label.layer.shadowColor = UIColor.gray.cgColor
-        helpHeader_Label.layer.shadowOpacity = 0.75
-        helpHeader_Label.layer.shadowOffset = .zero
-        helpHeader_Label.layer.shadowRadius = 5.0
         
         helpHeader_Label.layer.borderColor = UIColor.gray.cgColor
         helpFileFormat_Label.layer.borderColor = UIColor.gray.cgColor
@@ -87,7 +85,7 @@ class HomeScreenController: UIViewController {
         helpFileFormat_Label.layer.borderWidth = 1.0
         helpHeader_Label.layer.cornerRadius = 5.0
         helpFileFormat_Label.layer.cornerRadius = 5.0
-        
+        comingSoon.text = "Coming\nSoon"
         setHelpContent()
     }
     
@@ -107,8 +105,8 @@ class HomeScreenController: UIViewController {
     }
     
     func setHelpContent(){
-        helpContent_Label.text = "This is the guide text to get your started.\n\nStart by clicking Import File when you are ready to fix a document. You will be prompted to choose a document from your iCloud. You will be able to make changes to any local files accesed from your iCloud folder name "Documents". The app can only choose from local documents in this folder, it is essential that you have stored it in the correct place. \n\n" +
-        "Once your Document folder is selected, click on the file that needs fixing. Once the file is imported there will be a message at the top of your screen saying "Imported file successful. Scan Ready." Your next step is to clcik Scan and Fix located directly under the Import File button.\n\n" +
+        helpContent_Label.text = "This is the guide text to get your started.\n\nStart by clicking Import File when you are ready to fix a document. You will be prompted to choose a document from your iCloud. You will be able to make changes to any local files accesed from your iCloud folder name 'Documents'. The app can only choose from local documents in this folder, it is essential that you have stored it in the correct place. \n\n" +
+        "Once your Document folder is selected, click on the file that needs fixing. Once the file is imported there will be a message at the top of your screen saying 'Imported file successful. Scan Ready.' Your next step is to clcik Scan and Fix located directly under the Import File button.\n\n" +
         "From here you can click on the Preview button to see your old document compared to the new fixed document. This is optional, it serves as a check to make sure you are happy with the changes. Once you are ready to continue, you can click the exit button located at the top right of the screen." +
             "Your last step is to save. You can do this by using the Save button located to the right of the Preview button. Once you have saved your new file, it will save to the location you originally pulled your document from. It will be renamed with the original files name that also includes, _FIXED, follwed by a date and time stamp." 
     }
@@ -163,6 +161,8 @@ class HomeScreenController: UIViewController {
         documentPicker.allowsMultipleSelection = false
         present(documentPicker, animated: true, completion: nil)
         
+        preview_Button.isHidden = true
+        saveButton.isHidden = true
         
     }
     
@@ -172,8 +172,26 @@ class HomeScreenController: UIViewController {
         saveButton.isHidden = true
         preview_Button.isHidden = true
         
+        
+        
         //Process fileContents
-        newText = fileContent + "\n\nthe Fixer Upper."
+        var sentences: [String] = []
+        var tempText = ""
+        var delimiter = ". "
+        sentences = fileContent.lowercased().components(separatedBy: delimiter)
+        
+        for sentence in sentences {
+            let sentenceChange = sentence.capitalizingFirstLetter()
+            
+            tempText += "\(sentenceChange). "
+        }
+        
+        delimiter = "\n"
+        sentences = tempText.components(separatedBy: delimiter)
+        for sentence in sentences {
+            let sentenceChange = sentence.capitalizingFirstLetter()
+            newText += "\(sentenceChange)\n"
+        }
         
         
         header_Label.text = "Scan complete.\nPreview, Save or Change File."
@@ -247,6 +265,7 @@ class HomeScreenController: UIViewController {
         background_home.isHidden = false
         helpButton.isHidden = false
         header_Label.isHidden = false
+        filename_Label.isHidden = false
     }
     
     
@@ -256,14 +275,30 @@ extension HomeScreenController: UIDocumentPickerDelegate {
         guard let selectedFileURL = urls.first else {
             return
         }
-        //READ TXT FILE
+        //READ FILE
         do {
             selectedFilePath = selectedFileURL
             print("\n\nAbsolute URL String: " + selectedFilePath.absoluteString + "\n\n")
-            fileContent = try String(contentsOf: selectedFileURL, encoding: .utf8)
+            
             //print(fileContent)
             header_Label.text = "Imported file successful.\nScan ready."
             filename_Label.text = selectedFilePath.deletingLastPathComponent().lastPathComponent + "/" + selectedFilePath.lastPathComponent
+            
+            if(selectedFilePath.pathExtension == "txt"){
+                fileContent = try String(contentsOf: selectedFileURL, encoding: .utf8)
+                pathExtension = "txt"
+            }
+            
+            var rtfString: NSAttributedString
+            
+            if(selectedFilePath.pathExtension == "rtf"){
+                rtfString = try NSAttributedString(url: selectedFilePath, options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.rtf], documentAttributes: nil)
+                
+                fileContent = rtfString.string
+                pathExtension = "rtf"
+            }
+            
+            
             startScan_Button.isHidden = false
             fileSelector_Button.setTitle("Change File", for: .normal)
         } catch {
@@ -271,4 +306,16 @@ extension HomeScreenController: UIDocumentPickerDelegate {
         }
         
     }
+}
+
+extension String {
+    
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).uppercased() + self.lowercased().dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+    
 }

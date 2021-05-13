@@ -245,6 +245,7 @@
                     <connections>
                         <outlet property="background_home" destination="Jbc-0h-Paf" id="UdQ-ri-KtZ"/>
                         <outlet property="blurView" destination="k2H-0u-2BK" id="NMx-s5-QOm"/>
+                        <outlet property="comingSoon" destination="cCv-9P-TSd" id="ehG-P4-DdL"/>
                         <outlet property="completed_Image" destination="f7k-EW-Aut" id="AKo-du-0zM"/>
                         <outlet property="completed_Label" destination="zL7-0M-gXI" id="lwc-Yl-wwO"/>
                         <outlet property="fileSelector_Button" destination="QIF-I2-kxG" id="Vuv-kp-7tU"/>
@@ -315,7 +316,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="word_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ssb-qg-Ezs">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="word_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ssb-qg-Ezs">
                             <rect key="frame" x="30" y="578" width="40" height="40"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -337,6 +338,16 @@
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCv-9P-TSd">
+                            <rect key="frame" x="25" y="573" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="5Oe-9L-NDr"/>
+                                <constraint firstAttribute="height" constant="50" id="bcu-Nk-0fd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                            <color key="textColor" systemColor="systemRedColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="jpL-eq-57W"/>
                     <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
@@ -345,6 +356,8 @@
                         <constraint firstItem="BVY-mu-B0b" firstAttribute="centerY" secondItem="9jL-sH-aId" secondAttribute="centerY" constant="214" id="2i5-j8-O20"/>
                         <constraint firstItem="BVY-mu-B0b" firstAttribute="top" secondItem="5rB-vZ-MaQ" secondAttribute="bottom" constant="5" id="4Kq-2c-Per"/>
                         <constraint firstItem="5rB-vZ-MaQ" firstAttribute="leading" secondItem="9jL-sH-aId" secondAttribute="leading" id="CCc-rS-Fup"/>
+                        <constraint firstItem="cCv-9P-TSd" firstAttribute="centerX" secondItem="9jL-sH-aId" secondAttribute="centerX" constant="-125.5" id="Eup-hd-zDw"/>
+                        <constraint firstItem="cCv-9P-TSd" firstAttribute="centerY" secondItem="9jL-sH-aId" secondAttribute="centerY" constant="266.5" id="NEe-xG-ihf"/>
                         <constraint firstItem="7cv-4j-3R8" firstAttribute="top" secondItem="BVY-mu-B0b" secondAttribute="bottom" constant="15" id="VFL-Yo-Lpk"/>
                         <constraint firstAttribute="trailing" secondItem="5rB-vZ-MaQ" secondAttribute="trailing" id="W9o-RM-bzL"/>
                         <constraint firstItem="Qhp-Cp-yHX" firstAttribute="top" secondItem="W0I-iB-8I9" secondAttribute="bottom" constant="15" id="WRf-rr-YeW"/>
