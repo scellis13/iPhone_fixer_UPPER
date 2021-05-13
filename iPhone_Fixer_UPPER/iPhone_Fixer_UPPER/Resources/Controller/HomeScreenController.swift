@@ -9,6 +9,16 @@ class HomeScreenController: UIViewController {
     @IBOutlet weak var startScan_Button: UIButton!
     @IBOutlet weak var filename_Label: UILabel!
     @IBOutlet weak var preview_Button: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    //Preview Elements
+    @IBOutlet var previewScanView: UIView!
+    @IBOutlet weak var previewExitButton: UIButton!
+    @IBOutlet weak var previewHeader_New: UILabel!
+    @IBOutlet weak var previewContentView_Old: UITextView!
+    @IBOutlet weak var previewHeader_Old: UILabel!
+    @IBOutlet weak var previewContentView_New: UITextView!
+    
     
     //Helper Elements
     @IBOutlet weak var helpButton: UIButton!
@@ -22,7 +32,9 @@ class HomeScreenController: UIViewController {
     var previous_header_text = ""
     var filename = ""
     var fileContent = ""
+    var newText = ""
     var selectedFilePath: URL!
+    var newFileURL: URL!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +77,21 @@ class HomeScreenController: UIViewController {
         helpFileFormat_Label.layer.cornerRadius = 5.0
         
         setHelpContent()
+    }
+    
+    func setStyleForPreviewElements() {
+        previewScanView.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width * 0.9, height: self.view.bounds.height * 0.75)
+        previewScanView.layer.shadowColor = UIColor.gray.cgColor
+        previewScanView.layer.shadowOpacity = 1
+        previewScanView.layer.shadowOffset = .zero
+        previewScanView.layer.shadowRadius = 10.0
+        
+        previewHeader_New.layer.borderColor = UIColor.gray.cgColor
+        previewHeader_Old.layer.borderColor = UIColor.gray.cgColor
+        previewHeader_New.layer.borderWidth = 1.0
+        previewHeader_Old.layer.borderWidth = 1.0
+        previewHeader_New.layer.cornerRadius = 5.0
+        previewHeader_Old.layer.cornerRadius = 5.0
     }
     
     func setHelpContent(){
@@ -131,41 +158,60 @@ class HomeScreenController: UIViewController {
     }
     
     
+    @IBAction func startScan(_ sender: Any){
+        header_Label.text = "BegiNNING SCAN..."
+        saveButton.isHidden = true
+        preview_Button.isHidden = true
+        
+        //Process fileContents
+        newText = fileContent + "\n\nthe Fixer Upper."
+        
+        
+        header_Label.text = "Scan complete. Choose Preview, Save or Import to continue."
+        preview_Button.isHidden = false
+        saveButton.isHidden = false
+        startScan_Button.isHidden = true
+    }
     
-    @IBAction func writeFiles(_ sender: Any) {
+    @IBAction func preview_Action(_ sender: Any) {
+        previewContentView_New.text = newText
+        previewContentView_Old.text = fileContent
+        animateIn(desiredView: blurView)
+        animateIn(desiredView: previewScanView)
+        previous_header_text = header_Label.text!
+        previewHeader_New.text = selectedFilePath.deletingLastPathComponent().appendingPathComponent(selectedFilePath.deletingPathExtension().lastPathComponent + "_FIXED").appendingPathExtension("txt").lastPathComponent
+        previewHeader_Old.text = selectedFilePath.lastPathComponent
+        header_Label.text = "Previewing changes made."
+    }
+    
+    @IBAction func previewExitButton_close(_ sender: Any) {
+        animateOut(desiredView: previewScanView)
+        animateOut(desiredView: blurView)
+        header_Label.text = previous_header_text
+    }
+    
+    @IBAction func saveFile(_ sender: Any) {
         print("Writing files.")
         do {
-            let newText = fileContent + "\n\nthe Fixer Upper."
+            newFileURL = selectedFilePath.deletingLastPathComponent().appendingPathComponent(selectedFilePath.deletingPathExtension().lastPathComponent + "_FIXED").appendingPathExtension("txt")
             
-            let newFileURL = selectedFilePath.deletingLastPathComponent().appendingPathComponent(selectedFilePath.deletingPathExtension().lastPathComponent + "_FIXED").appendingPathExtension("txt")
-            
-            print("\n\nContent read from: \(selectedFilePath!)")
+            print("\n\nContent read from: \(selectedFilePath.absoluteURL)")
             try newText.write(to: newFileURL, atomically: false, encoding: .utf8)
-            print("\n\nNew Content Written to: \(newFileURL)")
+            print("\n\nNew Content Written to: \(newFileURL.absoluteURL)")
+            
+            header_Label.text = "Save complete."
+            
+            //completed_Label.text = "Thank you for choosing the Fixer UPPER to help you with your formatting needs. We hope you enjoyed our Application. Your new file '\(newFileURL.lastPathComponent)' has been saved to the original folder location chosen."
+            
+            saveButton.isHidden = true
+            preview_Button.isHidden = true
         } catch {
             header_Label.text = "Error: Cannot write new file."
         }
     }
     
-    @IBAction func startScan(_ sender: Any){
-        header_Label.text = "BegiNNING SCAN..."
-        
-        
-        //Process fileContents
-        
-        
-        
-        header_Label.text = "Scan complete."
-        preview_Button.isHidden = false
+    func resetVariables() {
     }
-    
-    @IBAction func preview_Action(_ sender: Any) {
-        
-    }
-    
-    
-    
-    
 }
 
 extension HomeScreenController: UIDocumentPickerDelegate {
@@ -176,7 +222,7 @@ extension HomeScreenController: UIDocumentPickerDelegate {
         //READ TXT FILE
         do {
             selectedFilePath = selectedFileURL
-            
+            print("\n\nAbsolute URL String: " + selectedFilePath.absoluteString + "\n\n")
             fileContent = try String(contentsOf: selectedFileURL, encoding: .utf8)
             //print(fileContent)
             header_Label.text = "Imported file successful.\nScan ready."
