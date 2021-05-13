@@ -17,12 +17,10 @@ class LoadAppViewController: UIViewController {
         // Do any additional setup after loading the view.
         loadLabel.isHidden = true
         background_image.isHidden = true
+        loadHomeViewButton.layer.cornerRadius = 10.0
         loadHomeViewButton.layer.borderColor = UIColor.gray.cgColor
         loadHomeViewButton.layer.borderWidth = 1.0
-        loadHomeViewButton.layer.cornerRadius = 15.0
-        loadHomeViewButton.layer.shadowColor = UIColor.gray.cgColor
-        loadHomeViewButton.layer.shadowOpacity = 0.75
-        loadHomeViewButton.layer.shadowOffset = .zero
+        loadHomeViewButton.layer.cornerRadius = 5.0
         loadData(callback: loadComplete)
         gif_loadview.loadGif(name: "background_gif_large")
         loadLabel.isHidden = false
