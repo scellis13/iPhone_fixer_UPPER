@@ -1,4 +1,4 @@
-// Last Update: 04/25/2021 08:53PM
+// Last Update: 05/13/2021 08:53PM
 // Updated By: Sean Ellis
 // Actions: Added Background Queue that is simulating user data load. Will have to assess how long it takes to load iCloud Drive and user data later, but for now it simulates a 15 second load time. Swaps to a background still view once load is complete.
 // Next Actions: Design initial view that prompts user to add text/file to be converted.
@@ -17,10 +17,7 @@ class LoadAppViewController: UIViewController {
         // Do any additional setup after loading the view.
         loadLabel.isHidden = true
         background_image.isHidden = true
-        loadHomeViewButton.layer.cornerRadius = 10.0
-        loadHomeViewButton.layer.borderColor = UIColor.gray.cgColor
-        loadHomeViewButton.layer.borderWidth = 1.0
-        loadHomeViewButton.layer.cornerRadius = 5.0
+
         loadData(callback: loadComplete)
         gif_loadview.loadGif(name: "background_gif_large")
         loadLabel.isHidden = false
@@ -33,13 +30,13 @@ class LoadAppViewController: UIViewController {
         //Use background thread to load data.
         //Once finished, pass finished = true
         DispatchQueue.global().async {
-            sleep(1) //Imitating fetching user data
+            sleep(12) //Imitating fetching user data
             DispatchQueue.main.async {
                 self.gif_loadview.isHidden = true
                 self.background_image.isHidden = false
                 self.loadLabel.text = "Load complete."
             }
-            sleep(1)
+            sleep(3)
             DispatchQueue.main.async {
                 callback()
             }

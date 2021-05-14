@@ -62,6 +62,14 @@ class HomeScreenController: UIViewController {
         startScan_Button.layer.shadowOpacity = 0.75
         startScan_Button.layer.shadowOffset = .zero
         startScan_Button.layer.shadowRadius = 5.0
+        
+        fileSelector_Button.layer.borderColor = UIColor.gray.cgColor
+        fileSelector_Button.layer.borderWidth = 1.0
+        fileSelector_Button.layer.cornerRadius = 15.0
+        
+        startScan_Button.layer.borderColor = UIColor.gray.cgColor
+        startScan_Button.layer.borderWidth = 1.0
+        startScan_Button.layer.cornerRadius = 15.0
     }
     
     func setStyleForHelperElements(){
@@ -103,7 +111,7 @@ class HomeScreenController: UIViewController {
         helpContent_Label.text = "This is the guide text to get your started.\n\nStart by clicking Import File when you are ready to fix a document. You will be prompted to choose a document from your iCloud. You will be able to make changes to any local files accesed from your iOS Device. It is essential that you have stored it in the correct place. \n\n" +
         "Once your Document folder is selected, click on the file that needs fixing. Once the file is imported there will be a message at the top of your screen saying 'Imported file successful. Scan Ready.' Your next step is to click Scan and Fix located directly under the Import File button. The app will convert all uppercase letters to lowercase, except the first letter after a period.\n\n" +
         "From here you can click on the Preview button to see your old document compared to the new fixed document. This is optional, it serves as a check to make sure you are happy with the changes. Once you are ready to continue, you can click the exit button located at the top right of the screen." +
-            "Your last step is to save. You can do this by using the Save button located to the right of the Preview button. Once you have saved your new file, it will save to the location you originally pulled your document from. It will be renamed with the original files name that also includes, _FIXED, follwed by a date and time stamp."
+            "Your last step is to save. You can do this by using the Save button located to the right of the Preview button. Once you have saved your new file, it will save to the location you originally pulled your document from. It will be renamed with the original files name that also includes a current timestamp. For example, a file named 'textfile.txt' will be renamed to: 'textfile Fixed yyyy-MM-dd HH:mm:ss.txt'."
     }
     
    
@@ -253,7 +261,8 @@ class HomeScreenController: UIViewController {
         filename = ""
         fileContent = ""
         newText = ""
-        header_Label.text = ""
+        header_Label.text = "Select a File to Begin."
+        filename_Label.text = ""
         fileSelector_Button.isHidden = false
         background_home.isHidden = false
         helpButton.isHidden = false

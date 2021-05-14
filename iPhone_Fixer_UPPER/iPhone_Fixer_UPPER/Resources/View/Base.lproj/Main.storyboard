@@ -30,13 +30,12 @@
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jeq-fW-Y5E">
                                 <rect key="frame" x="95" y="477" width="200" height="50"/>
-                                <color key="backgroundColor" red="0.85578590610000005" green="0.85578590610000005" blue="0.85578590610000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5Kq-td-p3i"/>
                                     <constraint firstAttribute="width" constant="200" id="X0s-wR-Uwh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Start Fixing!">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Start Fixing ▹">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -82,26 +81,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14z-p5-jIQ">
-                                <rect key="frame" x="120" y="477" width="150" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="8IG-fq-0gt"/>
-                                    <constraint firstAttribute="height" constant="50" id="FLn-cc-JVr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Start Fixing!">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="resetAction:" destination="jmo-JI-ClL" eventType="touchUpInside" id="oLQ-fx-oXB"/>
-                                </connections>
-                            </button>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_still" translatesAutoresizingMaskIntoConstraints="NO" id="f7k-EW-Aut">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_still_homescreen" translatesAutoresizingMaskIntoConstraints="NO" id="Jbc-0h-Paf">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14z-p5-jIQ">
+                                <rect key="frame" x="15" y="45" width="161" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="k7L-Aq-252"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="◀ Fix Another File.">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetAction:" destination="jmo-JI-ClL" eventType="touchUpInside" id="oLQ-fx-oXB"/>
+                                </connections>
+                            </button>
                             <textView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zL7-0M-gXI">
                                 <rect key="frame" x="15" y="97" width="360" height="300"/>
                                 <constraints>
@@ -215,7 +213,8 @@
                             <constraint firstItem="97l-Z8-qj7" firstAttribute="centerX" secondItem="P2m-Xf-GF3" secondAttribute="centerX" id="7DB-7O-ZSy"/>
                             <constraint firstAttribute="bottom" secondItem="f7k-EW-Aut" secondAttribute="bottom" id="8e1-k4-DWH"/>
                             <constraint firstItem="zL7-0M-gXI" firstAttribute="centerY" secondItem="P2m-Xf-GF3" secondAttribute="centerY" constant="-175" id="928-o5-8Sk"/>
-                            <constraint firstItem="14z-p5-jIQ" firstAttribute="centerX" secondItem="P2m-Xf-GF3" secondAttribute="centerX" id="CVg-9z-yg2"/>
+                            <constraint firstItem="14z-p5-jIQ" firstAttribute="top" secondItem="P2m-Xf-GF3" secondAttribute="top" constant="45" id="AsA-gh-Zv5"/>
+                            <constraint firstItem="14z-p5-jIQ" firstAttribute="leading" secondItem="d1X-0P-71L" secondAttribute="leading" constant="15" id="CiU-QA-yX7"/>
                             <constraint firstItem="f7k-EW-Aut" firstAttribute="top" secondItem="P2m-Xf-GF3" secondAttribute="top" id="DFA-LV-GgL"/>
                             <constraint firstItem="PLV-Qq-5je" firstAttribute="centerY" secondItem="P2m-Xf-GF3" secondAttribute="centerY" constant="30" id="HPC-P2-5fN"/>
                             <constraint firstItem="f7k-EW-Aut" firstAttribute="leading" secondItem="d1X-0P-71L" secondAttribute="leading" id="IIq-ay-dpF"/>
@@ -223,7 +222,6 @@
                             <constraint firstAttribute="bottom" secondItem="Jbc-0h-Paf" secondAttribute="bottom" id="NQp-tH-3qq"/>
                             <constraint firstItem="97l-Z8-qj7" firstAttribute="top" secondItem="QIF-I2-kxG" secondAttribute="bottom" constant="15" id="PlU-xe-iCS"/>
                             <constraint firstItem="QIF-I2-kxG" firstAttribute="centerX" secondItem="P2m-Xf-GF3" secondAttribute="centerX" id="QVT-Nw-BxE"/>
-                            <constraint firstItem="14z-p5-jIQ" firstAttribute="centerY" secondItem="P2m-Xf-GF3" secondAttribute="centerY" constant="80" id="byG-uY-J38"/>
                             <constraint firstItem="Cue-fW-L11" firstAttribute="centerX" secondItem="P2m-Xf-GF3" secondAttribute="centerX" constant="75" id="d1H-KB-aYd"/>
                             <constraint firstItem="5Vy-Y3-c84" firstAttribute="leading" secondItem="d1X-0P-71L" secondAttribute="leading" constant="15" id="fr6-bD-8AC"/>
                             <constraint firstItem="Jbc-0h-Paf" firstAttribute="leading" secondItem="d1X-0P-71L" secondAttribute="leading" id="jQf-YL-dYd"/>
