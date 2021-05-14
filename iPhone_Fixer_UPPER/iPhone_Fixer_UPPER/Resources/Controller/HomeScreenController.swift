@@ -164,8 +164,7 @@ class HomeScreenController: UIViewController {
         documentPicker.allowsMultipleSelection = false
         present(documentPicker, animated: true, completion: nil)
         
-        preview_Button.isHidden = true
-        saveButton.isHidden = true
+        
         
     }
     
@@ -279,6 +278,8 @@ extension HomeScreenController: UIDocumentPickerDelegate {
         }
         //READ FILE
         do {
+            preview_Button.isHidden = true
+            saveButton.isHidden = true
             selectedFilePath = selectedFileURL
             print("\n\nAbsolute URL String: " + selectedFilePath.absoluteString + "\n\n")
             

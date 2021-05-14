@@ -88,12 +88,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14z-p5-jIQ">
-                                <rect key="frame" x="15" y="45" width="161" height="45"/>
+                                <rect key="frame" x="15" y="45" width="156" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="k7L-Aq-252"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="◀ Fix Another File.">
+                                <state key="normal" title="◀ Fix Another File">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -129,7 +129,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIF-I2-kxG">
                                 <rect key="frame" x="95" y="362" width="200" height="50"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8mu-0s-ivy"/>
                                     <constraint firstAttribute="width" constant="200" id="pbj-Xo-5MF"/>
@@ -154,7 +153,6 @@
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97l-Z8-qj7">
                                 <rect key="frame" x="95" y="427" width="200" height="50"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Dye-m3-mLf"/>
                                     <constraint firstAttribute="width" constant="200" id="d4p-eb-M9G"/>
